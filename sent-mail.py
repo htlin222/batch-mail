@@ -28,8 +28,8 @@ def main():
     for index, email_address \
             in enumerate(email_addresses):
         print(f"第{index+1}封信，即將寄給{names[index]}")
-        title = names[index] + title_tempate
-        content = names[index] + content_tempate
+        title = title_tempate.format(name=names[index])
+        content = content_tempate.format(name=names[index])
         yag = yagmail.SMTP(sent_from,
                            oauth2_file="credentials.json")
         print("...處理中...")
